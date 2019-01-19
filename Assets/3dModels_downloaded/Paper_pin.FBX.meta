@@ -134,6 +134,30 @@ ModelImporter:
     4300042: Sphere052
     4300044: Sphere053
     4300046: Line039
+    6400000: Line028
+    6400002: Line029
+    6400004: Line030
+    6400006: Line031
+    6400008: Line032
+    6400010: Line033
+    6400012: Line034
+    6400014: Line035
+    6400016: Line036
+    6400018: Line037
+    6400020: Line038
+    6400022: Line039
+    6400024: Sphere042
+    6400026: Sphere043
+    6400028: Sphere044
+    6400030: Sphere045
+    6400032: Sphere046
+    6400034: Sphere047
+    6400036: Sphere048
+    6400038: Sphere049
+    6400040: Sphere050
+    6400042: Sphere051
+    6400044: Sphere052
+    6400046: Sphere053
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -169,7 +193,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

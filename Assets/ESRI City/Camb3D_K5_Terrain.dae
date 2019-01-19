@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <authoring_tool>FME 2017.1.0.0</authoring_tool>
+    </contributor>
+    <created>2017-10-12T06:10:36-04:00</created>
+    <modified>2017-10-12T06:10:36-04:00</modified>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_geometries>
+    <geometry id="g_0">
+      <mesh>
+        <source id="src_0" name="position">
+          <float_array id="arr_0" count="15">-499.999998692365 -499.999883828685 0 -499.999998693063 500.000116165727 0 500.000001306005 500.000116165727 0 500.000001306355 -499.999883828685 0 -499.999998692365 -499.999883828685 0</float_array>
+          <technique_common>
+            <accessor source="#arr_0" stride="3" count="5">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="v_0">
+          <input semantic="POSITION" source="#src_0"/>
+        </vertices>
+        <linestrips count="1">
+          <input offset="0" semantic="VERTEX" source="#v_0"/>
+          <p>0 1 2 3 4</p>
+        </linestrips>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="vs_0">
+      <node>
+        <instance_geometry url="#g_0"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#vs_0"/>
+  </scene>
+</COLLADA>
