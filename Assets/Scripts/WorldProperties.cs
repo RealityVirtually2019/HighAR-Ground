@@ -80,13 +80,17 @@
 
                         async () =>
                         {                              
-                            StorageFile textFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Data/Text.txt"));
+                            StorageFile textFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Text.txt"));
                             plainTextData = await FileIO.ReadTextAsync(textFile);
                         });
                     task.Start();
                     task.Wait();
 
 #endif
+            if (plainTextData != "")
+            {
+                new Person(new Vector3(-1, 0, 2), 2);
+            }
 
             string[] linesInFile = plainTextData.Split('\n');
             foreach (string line in linesInFile)
