@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class zoom : MonoBehaviour {
-    Animator animator;
+    public Animator zoomAnimator;
     // Use this for initialization
     void Start () {
-        animator = GetComponent<Animator>();
+        zoomAnimator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame

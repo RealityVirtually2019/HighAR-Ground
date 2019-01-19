@@ -945,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CityCenter: {fileID: 138609021}
+  zoomAnimator: {fileID: 1302692625}
   desiredPosition: {fileID: 320671126}
   speed: 1
   moveToLocation: 0
@@ -8084,7 +8085,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1302692624}
   - component: {fileID: 1302692625}
-  - component: {fileID: 1302692626}
   m_Layer: 0
   m_Name: ZoomAnimation
   m_TagString: Untagged
@@ -8134,17 +8134,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1302692626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1302692623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5426c9f3b098c74a9d1687d4dada7f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1306297049
 Prefab:
   m_ObjectHideFlags: 0
