@@ -295,9 +295,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personBaseObject: {fileID: 1514528288688212, guid: f42c8291bbe1f474faaa82f015804d96,
     type: 2}
+  cardObject: {fileID: 1833387678100934, guid: 2231debec0ba1ff40910eb6eeff8706f, type: 2}
   clipShaderInstance: {fileID: 4800000, guid: 5944cb45e52ee3542804115b9d5b42db, type: 3}
   clipShaderColoredInstance: {fileID: 4800000, guid: 60a9d4f7b2863f645bb5d5db2104f0da,
     type: 3}
+  glowShaderInstance: {fileID: 0}
 --- !u!114 &885103819
 MonoBehaviour:
   m_ObjectHideFlags: 0

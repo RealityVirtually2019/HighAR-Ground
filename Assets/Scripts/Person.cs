@@ -6,11 +6,14 @@
 
     public class Person
     {
-
+        public GameObject gameObjectCard;
         public GameObject gameObjectPointer; // This is the related game object
         public int id;
         public bool selected;
         private int triageState;
+        private string cardName;
+        private string cardPhone;
+        private string cardLocation;
 
         public Person(Vector3 position)
         {
@@ -42,6 +45,28 @@
 
             TriageStateChange(triageState);
         }
+
+        public Person(Vector3 position, int triageState, string cardName)
+        {
+            GameObject cardObject = (GameObject)WorldProperties.worldObject.GetComponent<WorldProperties>().cardObject;
+            GameObject baseObject = (GameObject)WorldProperties.worldObject.GetComponent<WorldProperties>().personBaseObject;
+            gameObjectPointer = Object.Instantiate(baseObject, WorldProperties.worldObject.transform);
+            gameObjectPointer.GetComponent<PersonInteractionHandler>().classPointer = this; // Connect the gameObject back to the classObject
+            gameObjectPointer.tag = "Person";
+            gameObjectPointer.name = baseObject.name;
+            gameObjectPointer.transform.localScale = WorldProperties.scale * 500;
+            gameObjectPointer.transform.localPosition = position + new Vector3(0, WorldProperties.scale.y * 100, 0);
+
+            gameObjectCard = Object.Instantiate(cardObject, gameObjectPointer.transform);
+            gameObjectCard.GetComponent<FaceMe>().Name.text = cardName;
+            
+
+            selected = false;
+
+            WorldProperties.AddClipShader(gameObjectPointer.transform);
+            TriageStateChange(triageState);
+        }
+
 
         public void TriageStateChange(int newTriageState)
         {
