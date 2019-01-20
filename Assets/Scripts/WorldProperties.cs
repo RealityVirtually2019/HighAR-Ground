@@ -84,12 +84,12 @@
         public bool LoadPeople()
         {
             //Testing
-            new Person(new Vector3(0, 0, 0), 1);
-            new Person(new Vector3(0, 0, 1), 1);
-            new Person(new Vector3(0, 0, -1), 1);
-            new Person(new Vector3(1, 0, 0), 1);
-            new Person(new Vector3(-1, 0, 0), 1);
-            new Person(new Vector3(-2, 0, 0), 1, "hello world!", "617-222-5555", "42.359, -71.053");
+            //new Person(new Vector3(0, 0, 0), 1);
+            //new Person(new Vector3(0, 0, 1), 1);
+            //new Person(new Vector3(0, 0, -1), 1);
+            //new Person(new Vector3(1, 0, 0), 1);
+            //new Person(new Vector3(-1, 0, 0), 1);
+            new Person(new Vector3(-2, 0, 0), 1, "CASTILLO, LUCILLA", "617-222-5555", "42.359, -71.053");
 
             string plainTextData = "";
 
