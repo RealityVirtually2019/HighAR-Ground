@@ -82,27 +82,31 @@
         {
             WorldProperties.GlobalStateHandler.MoveToLocation(gameObjectPointer.transform.position);
             WorldProperties.selectedPerson = this;
-            selected = true;
-            gameObjectPointer.transform.localScale *= 10;
+            selected = !selected;
+            if(selected){
+                gameObjectPointer.transform.localScale *= 10;
+            }
+            if (!selected)
+            {
+                gameObjectPointer.transform.localScale /= 10;
+            }
         }
 
         public void HoverEvent()
         {
             MeshRenderer gameObjectRenderer = gameObjectPointer.GetComponent<MeshRenderer>();
             Material newMaterial = new Material(WorldProperties.clipShaderColored);
-            newMaterial.color = WorldProperties.triageColors[triageState];
+            newMaterial.color = Color.blue;
             gameObjectRenderer.material = newMaterial;
-            
+
         }
 
         public void HoverEnd()
         {
-            gameObjectPointer.transform.localScale *= 10;
             MeshRenderer gameObjectRenderer = gameObjectPointer.GetComponent<MeshRenderer>();
             Material newMaterial = new Material(WorldProperties.clipShaderColored);
             newMaterial.color = WorldProperties.triageColors[triageState];
             gameObjectRenderer.material = newMaterial;
-           
         }
     }
 }

@@ -93,19 +93,19 @@
 
             string plainTextData = "";
 
-#if WINDOWS_UWP
+//#if WINDOWS_UWP
 
-                    Task task = new Task(
+//                    Task task = new Task(
 
-                        async () =>
-                        {                              
-                            StorageFile textFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Text.txt"));
-                            plainTextData = await FileIO.ReadTextAsync(textFile);
-                        });
-                    task.Start();
-                    task.Wait();
+//                        async () =>
+//                        {                              
+//                            StorageFile textFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Text.txt"));
+//                            plainTextData = await FileIO.ReadTextAsync(textFile);
+//                        });
+//                    task.Start();
+//                    task.Wait();
 
-#endif
+//#endif
             if (plainTextData != "")
             {
                 new Person(new Vector3(-1, 0, 2), 2);
