@@ -1,7 +1,7 @@
 ﻿Shader "Custom/ClipShaderColored" {
 	Properties{
-		_Color("Color", Color) = (0,2,0,1)
-		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_Color("Color", Color) = (.5,.5,.5,1)
+		_MainTex("Albedo (RGB)", 2D) = "grey" {}
 	}
 		SubShader{
 			Tags{ "RenderType" = "Opaque" }

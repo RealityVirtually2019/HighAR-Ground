@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Person
   - ClipShader
+  - ColoredShader
   layers:
   - Default
   - TransparentFX

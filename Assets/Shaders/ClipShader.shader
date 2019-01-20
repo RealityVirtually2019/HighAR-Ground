@@ -1,6 +1,6 @@
 ﻿﻿Shader "Custom/ClipShader" {
 	Properties{
-		_MainTex("Base (RGB)", 2D) = "white" {}
+		_MainTex("Base (RGB)", 2D) = "grey" {}
 	}
 		SubShader{
 			Tags{ "RenderType" = "Opaque" }

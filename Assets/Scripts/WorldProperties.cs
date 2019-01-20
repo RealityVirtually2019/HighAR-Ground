@@ -91,7 +91,7 @@
             new Person(new Vector3(0, 0, -1), 3);
             new Person(new Vector3(1, 0, 0), -1);
             new Person(new Vector3(-1, 0, 0), -1);
-            new Person(new Vector3(-2, 0, 0), 1, "CASTILLO, LUCILLA", "617-222-5555", "42.359, -71.053");
+            new Person(new Vector3(-4.596196f, 0.88f, -1.36f), 1, "CASTILLO, LUCILLA", "617-222-5555", "42.359, -71.053");
 
             string plainTextData = "";
 
@@ -147,7 +147,10 @@
         {
             if (parent.GetComponent<Renderer>())
             {
-                parent.GetComponent<Renderer>().material.shader = clipShader;
+                if(parent.gameObject.tag != "ColoredShader")
+                {
+                    parent.GetComponent<Renderer>().material.shader = clipShaderColored;
+                }
             }
 
             foreach (Transform child in parent)

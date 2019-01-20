@@ -76,7 +76,7 @@
             }
 
             if (currentState == AppState.Zooming_In) {
-                if (transform.localScale.x < 0.0025)
+                if (transform.localScale.x < 0.003)
                 {
                     transform.localScale += new Vector3(0.0001F, 0.0001F, 0.0001F);
                 }
