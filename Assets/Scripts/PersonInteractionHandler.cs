@@ -5,20 +5,19 @@
     using UnityEngine;
     using HoloToolkit.Unity.InputModule;
 
-    public class PersonInteractionHandler : MonoBehaviour, IInputClickHandler
+    public class PersonInteractionHandler : MonoBehaviour, IFocusable, IInputClickHandler
     {
-
-        //public void OnFocusEnter()
-        //{
-        //    Rotating = true;
-        //}
-
-        //public void OnFocusExit()
-        //{
-        //    Rotating = false;
-        //}  
-
         public Person classPointer;
+
+        void IFocusable.OnFocusEnter()
+        {
+            classPointer.HoverEvent();
+        }
+
+        void IFocusable.OnFocusExit()
+        {
+            classPointer.HoverEnd();
+        }
 
         public void OnInputClicked(InputClickedEventData eventData)
         {

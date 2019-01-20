@@ -22,8 +22,8 @@
             gameObjectPointer.GetComponent<PersonInteractionHandler>().classPointer = this; // Connect the gameObject back to the classObject
             gameObjectPointer.tag = "Person";
             gameObjectPointer.name = baseObject.name;
-            gameObjectPointer.transform.localScale = WorldProperties.scale * 500;
-            gameObjectPointer.transform.localPosition = position + new Vector3(0, WorldProperties.scale.y * 100, 0);
+            gameObjectPointer.transform.localScale = WorldProperties.scale * 1000;
+            gameObjectPointer.transform.localPosition = position + new Vector3(0, WorldProperties.scale.y * 50, 0);
 
             selected = false;
 
@@ -38,12 +38,11 @@
             gameObjectPointer.GetComponent<PersonInteractionHandler>().classPointer = this; // Connect the gameObject back to the classObject
             gameObjectPointer.tag = "Person";
             gameObjectPointer.name = baseObject.name;
-            gameObjectPointer.transform.localScale = WorldProperties.scale * 500;
-            gameObjectPointer.transform.localPosition = position + new Vector3(0, WorldProperties.scale.y * 100, 0);  
+            gameObjectPointer.transform.localScale = WorldProperties.scale * 1000;
+            gameObjectPointer.transform.localPosition = position*50 + new Vector3(0, WorldProperties.scale.y * 10, 0);  
         
             selected = false;
 
-            WorldProperties.AddClipShader(gameObjectPointer.transform);
             TriageStateChange(triageState);
         }
 
@@ -73,7 +72,7 @@
         {
             triageState = newTriageState;
             MeshRenderer gameObjectRenderer = gameObjectPointer.GetComponent<MeshRenderer>();
-            Material newMaterial = new Material(WorldProperties.clipShader);
+            Material newMaterial = new Material(WorldProperties.clipShaderColored);
 
             newMaterial.color = WorldProperties.triageColors[triageState];
             gameObjectRenderer.material = newMaterial;
@@ -84,7 +83,25 @@
             WorldProperties.GlobalStateHandler.MoveToLocation(gameObjectPointer.transform.position);
             WorldProperties.selectedPerson = this;
             selected = true;
+            gameObjectPointer.transform.localScale *= 10;
         }
 
+        public void HoverEvent()
+        {
+            MeshRenderer gameObjectRenderer = gameObjectPointer.GetComponent<MeshRenderer>();
+            Material newMaterial = new Material(WorldProperties.clipShaderColored);
+            newMaterial.color = WorldProperties.triageColors[triageState];
+            gameObjectRenderer.material = newMaterial;
+            gameObjectPointer.transform.localScale *= 10;
+        }
+
+        public void HoverEnd()
+        {
+            MeshRenderer gameObjectRenderer = gameObjectPointer.GetComponent<MeshRenderer>();
+            Material newMaterial = new Material(WorldProperties.clipShaderColored);
+            newMaterial.color = WorldProperties.triageColors[triageState];
+            gameObjectRenderer.material = newMaterial;
+            gameObjectPointer.transform.localScale *= 10;
+        }
     }
 }
