@@ -7,12 +7,12 @@
     using UnityEditor;
     using UnityEngine;
 
-    #if WINDOWS_UWP
+#if WINDOWS_UWP
     using Windows.Storage;
     using System.Threading.Tasks;
     using Windows.Data.Xml.Dom;
     using System;
-    #endif
+#endif
 
     /// <summary>
     /// This is the only class that should have static variables or functions that are consistent throughout the entire program.
@@ -31,6 +31,8 @@
 
         public static Person selectedPerson;
 
+        public static StateHandler GlobalStateHandler;
+
         public static Vector3 scale;
         public static Vector3 currentScale;
 
@@ -38,19 +40,23 @@
         void Start()
         {
             worldObject = gameObject;
-           
+            clipShader = GameObject.FindWithTag("ClipShader").GetComponent<Renderer>().material.shader;
+
             personDict = new Dictionary<int, Person>(); // Collection of all the drone classObjects
             triageDescriptions = new Dictionary<int, string>(); // Collection of all the drone classObjects
-            triageColors = new Dictionary<int,Color>(); // Collection of all the drone classObjects
+            triageColors = new Dictionary<int, Color>(); // Collection of all the drone classObjects
 
             selectedPerson = null;
 
-            scale = new Vector3(1,1,1);
+            GlobalStateHandler = gameObject.GetComponent<StateHandler>();
+
+            scale = new Vector3(1, 1, 1);
 
             SetupTriageStates();
 
-
             LoadPeople();
+
+            AddClipShader(gameObject.transform);
         }
 
         public void SetupTriageStates()
@@ -70,7 +76,11 @@
         public bool LoadPeople()
         {
             //Testing
-            new Person(new Vector3(1,0,2), 1);
+            new Person(new Vector3(0, 0, 0), 1);
+            new Person(new Vector3(0, 0, 1), 1);
+            new Person(new Vector3(0, 0, -1), 1);
+            new Person(new Vector3(1, 0, 0), 1);
+            new Person(new Vector3(-1, 0, 0), 1);
 
             string plainTextData = "";
 

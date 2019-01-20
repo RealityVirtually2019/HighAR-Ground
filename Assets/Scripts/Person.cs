@@ -16,44 +16,49 @@
         {
             GameObject baseObject = (GameObject)WorldProperties.worldObject.GetComponent<WorldProperties>().personBaseObject;
             gameObjectPointer = Object.Instantiate(baseObject, WorldProperties.worldObject.transform);
-            //gameObjectPointer.GetComponent<PersonProperties>().classPointer = this; // Connect the gameObject back to the classObject
+            gameObjectPointer.GetComponent<PersonInteractionHandler>().classPointer = this; // Connect the gameObject back to the classObject
             gameObjectPointer.tag = "Person";
             gameObjectPointer.name = baseObject.name;
-            gameObjectPointer.transform.localScale = WorldProperties.scale * 10;
-            gameObjectPointer.transform.localPosition = position;
+            gameObjectPointer.transform.localScale = WorldProperties.scale * 500;
+            gameObjectPointer.transform.localPosition = position + new Vector3(0, WorldProperties.scale.y * 100, 0);
 
             selected = false;
 
+            WorldProperties.AddClipShader(gameObjectPointer.transform);
             TriageStateChange(-1);
-
-            //WorldProperties.AddClipShader(gameObjectPointer.transform);
         }
 
         public Person(Vector3 position, int triageState)
         {
             GameObject baseObject = (GameObject)WorldProperties.worldObject.GetComponent<WorldProperties>().personBaseObject;
             gameObjectPointer = Object.Instantiate(baseObject, WorldProperties.worldObject.transform);
-            //gameObjectPointer.GetComponent<PersonProperties>().classPointer = this; // Connect the gameObject back to the classObject
+            gameObjectPointer.GetComponent<PersonInteractionHandler>().classPointer = this; // Connect the gameObject back to the classObject
             gameObjectPointer.tag = "Person";
             gameObjectPointer.name = baseObject.name;
-            gameObjectPointer.transform.localScale = WorldProperties.scale * 10;
-            gameObjectPointer.transform.localPosition = position;  
-
+            gameObjectPointer.transform.localScale = WorldProperties.scale * 500;
+            gameObjectPointer.transform.localPosition = position + new Vector3(0, WorldProperties.scale.y * 100, 0);  
+        
             selected = false;
 
+            WorldProperties.AddClipShader(gameObjectPointer.transform);
             TriageStateChange(triageState);
-
-            //WorldProperties.AddClipShader(gameObjectPointer.transform);
         }
 
         public void TriageStateChange(int newTriageState)
         {
             triageState = newTriageState;
             MeshRenderer gameObjectRenderer = gameObjectPointer.GetComponent<MeshRenderer>();
-            Material newMaterial = new Material(Shader.Find("Standard"));
+            Material newMaterial = new Material(WorldProperties.clipShader);
 
             newMaterial.color = WorldProperties.triageColors[triageState];
             gameObjectRenderer.material = newMaterial;
+        }
+
+        public void ClickEvent()
+        {
+            WorldProperties.GlobalStateHandler.MoveToLocation(gameObjectPointer.transform.position);
+            WorldProperties.selectedPerson = this;
+            selected = true;
         }
 
     }
