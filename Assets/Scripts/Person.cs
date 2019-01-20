@@ -46,7 +46,7 @@
             TriageStateChange(triageState);
         }
 
-        public Person(Vector3 position, int triageState, string cardName)
+        public Person(Vector3 position, int triageState, string cardName, string cardPhone, string cardLocation)
         {
             GameObject cardObject = (GameObject)WorldProperties.worldObject.GetComponent<WorldProperties>().cardObject;
             GameObject baseObject = (GameObject)WorldProperties.worldObject.GetComponent<WorldProperties>().personBaseObject;
@@ -59,7 +59,8 @@
 
             gameObjectCard = Object.Instantiate(cardObject, gameObjectPointer.transform);
             gameObjectCard.GetComponent<FaceMe>().Name.text = cardName;
-            
+            gameObjectCard.GetComponent<FaceMe>().Phone.text = cardPhone;
+            gameObjectCard.GetComponent<FaceMe>().Location.text = cardLocation;
 
             selected = false;
 
