@@ -27,7 +27,7 @@
             if(currentState == AppState.Person_View)
             {
                 desiredPosition = newPosition;
-                heading = gameObject.transform.position - desiredPosition;
+                heading = desiredPosition- gameObject.transform.position;
                 currentDistanceFromDestination = heading.magnitude;
                 movingToLocation = true;
                 currentState = AppState.Zooming_Out;
