@@ -23,7 +23,7 @@
             gameObjectPointer.tag = "Person";
             gameObjectPointer.name = baseObject.name;
             gameObjectPointer.transform.localScale = WorldProperties.scale * 1000;
-            gameObjectPointer.transform.localPosition = position + new Vector3(0, WorldProperties.scale.y * 50, 0);
+            gameObjectPointer.transform.localPosition = position*50 + new Vector3(0, WorldProperties.scale.y * 50, 0);
 
             selected = false;
 
@@ -85,11 +85,11 @@
             WorldProperties.selectedPerson = this;
             selected = !selected;
             if(selected){
-                gameObjectPointer.transform.localScale *= 10;
+                //gameObjectPointer.transform.localScale *= 10;
             }
             if (!selected)
-            {
-                gameObjectPointer.transform.localScale /= 10;
+            {   
+                //gameObjectPointer.transform.localScale /= 10;
             }
         }
 

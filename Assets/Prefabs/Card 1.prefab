@@ -310,9 +310,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Triage State
-
-    more text....'
+  m_Text: IN NEED OF RESCUE
 --- !u!114 &114617341906560896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -513,7 +511,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -8.399999, y: -0.33}
-  m_SizeDelta: {x: 227.479, y: 45.575}
+  m_SizeDelta: {x: 320, y: 45.575}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224407892310455010
 RectTransform:
@@ -531,7 +529,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -8.4, y: 5.28}
-  m_SizeDelta: {x: 227.479, y: 45.575}
+  m_SizeDelta: {x: 320, y: 45.575}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &224638534065100110
 RectTransform:
