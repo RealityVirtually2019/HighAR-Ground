@@ -22,6 +22,7 @@
         [SerializeField]
         public static GameObject worldObject;
         public GameObject personBaseObject;
+        public GameObject cardObject;
 
         public static Shader clipShader;
 
@@ -81,6 +82,7 @@
             new Person(new Vector3(0, 0, -1), 1);
             new Person(new Vector3(1, 0, 0), 1);
             new Person(new Vector3(-1, 0, 0), 1);
+            new Person(new Vector3(-2, 0, 0), 1, "hello world!");
 
             string plainTextData = "";
 
