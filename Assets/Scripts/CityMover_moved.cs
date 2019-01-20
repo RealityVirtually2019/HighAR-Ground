@@ -31,7 +31,7 @@ public class CityMover : MonoBehaviour
         //Debug.Log(CityCenter.transform.position);
 
         
-            if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space"))
         {
             moveToLocation = true;
             
