@@ -17,7 +17,7 @@
             movingToLocation= false;
         }
 
-        public void MoveToLocation(Vector3 newPosition)
+        public void SelectPerson(Vector3 newPosition)
         {
             desiredPosition = newPosition;
             heading = gameObject.transform.position - desiredPosition;
@@ -27,13 +27,18 @@
 
         void Update()
         {
-            if (movingToLocation)
+            if (Input.GetKeyDown("space"))
+            {
+                SelectPerson(new Vector3(0,2,0));
+            }
+                if (movingToLocation)
             {
                 if (currentDistanceFromDestination > 0)
                 {
                     Vector3 currentPosition = gameObject.transform.position;
 
                     transform.Translate(heading * Time.deltaTime);
+                    transform.localScale += new Vector3(0.0001F, 0.0001F, 0.0001F);
 
                     Vector3 newPosition = gameObject.transform.position;
                     float distanceMoved = (currentPosition - newPosition).magnitude;

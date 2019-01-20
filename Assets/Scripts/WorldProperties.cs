@@ -38,6 +38,7 @@
         public static Person selectedPerson;
 
         public static StateHandler GlobalStateHandler;
+        public static Animator zoomAnimator;
 
         public static Vector3 scale;
         public static Vector3 currentScale;
@@ -57,6 +58,7 @@
             selectedPerson = null;
 
             GlobalStateHandler = gameObject.GetComponent<StateHandler>();
+            zoomAnimator = gameObject.GetComponent<Animator>();
 
             scale = new Vector3(1, 1, 1);
 
@@ -84,7 +86,7 @@
         public bool LoadPeople()
         {
             //Testing
-            new Person(new Vector3(0, 0, 0), 1);
+            Person Person1 = new Person(new Vector3(0, 0, 0), 1);
             new Person(new Vector3(0, 0, 1), 1);
             new Person(new Vector3(0, 0, -1), 1);
             new Person(new Vector3(1, 0, 0), 1);

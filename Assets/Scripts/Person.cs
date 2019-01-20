@@ -80,7 +80,7 @@
 
         public void ClickEvent()
         {
-            WorldProperties.GlobalStateHandler.MoveToLocation(gameObjectPointer.transform.position);
+            WorldProperties.GlobalStateHandler.SelectPerson(gameObjectPointer.transform.position);
             WorldProperties.selectedPerson = this;
             selected = !selected;
             if(selected){
