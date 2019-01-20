@@ -67,7 +67,7 @@
             Material newMaterial = new Material(WorldProperties.clipShaderColored);
             newMaterial.color = WorldProperties.triageColors[triageState];
             gameObjectRenderer.material = newMaterial;
-            gameObjectPointer.transform.localScale *= 10;
+            
         }
 
         public void HoverEnd()
