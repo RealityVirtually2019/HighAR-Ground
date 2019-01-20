@@ -97,11 +97,12 @@
 
         public void HoverEnd()
         {
+            gameObjectPointer.transform.localScale *= 10;
             MeshRenderer gameObjectRenderer = gameObjectPointer.GetComponent<MeshRenderer>();
             Material newMaterial = new Material(WorldProperties.clipShaderColored);
             newMaterial.color = WorldProperties.triageColors[triageState];
             gameObjectRenderer.material = newMaterial;
-            gameObjectPointer.transform.localScale *= 10;
+           
         }
     }
 }
