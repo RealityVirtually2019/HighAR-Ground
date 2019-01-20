@@ -23,7 +23,12 @@
         public static GameObject worldObject;
         public GameObject personBaseObject;
 
+        public Shader clipShaderInstance;
         public static Shader clipShader;
+        public Shader clipShaderColoredInstance;
+        public static Shader clipShaderColored;
+        public Shader glowShaderInstance;
+        public static Shader glowShader;
 
         public static Dictionary<int, Person> personDict;
         public static Dictionary<int, string> triageDescriptions;
@@ -40,7 +45,9 @@
         void Start()
         {
             worldObject = gameObject;
-            clipShader = GameObject.FindWithTag("ClipShader").GetComponent<Renderer>().material.shader;
+            clipShader = clipShaderInstance;
+            clipShaderColored = clipShaderColoredInstance;
+            glowShader = glowShaderInstance;
 
             personDict = new Dictionary<int, Person>(); // Collection of all the drone classObjects
             triageDescriptions = new Dictionary<int, string>(); // Collection of all the drone classObjects
@@ -53,10 +60,10 @@
             scale = new Vector3(1, 1, 1);
 
             SetupTriageStates();
+            
+            AddClipShader(gameObject.transform);
 
             LoadPeople();
-
-            AddClipShader(gameObject.transform);
         }
 
         public void SetupTriageStates()

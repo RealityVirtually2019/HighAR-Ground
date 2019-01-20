@@ -1,4 +1,4 @@
-﻿Shader "Custom/ClipShader" {
+﻿﻿Shader "Custom/ClipShader" {
 	Properties{
 		_MainTex("Base (RGB)", 2D) = "white" {}
 	}
