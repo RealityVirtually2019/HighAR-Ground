@@ -859,11 +859,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4543495872665798, guid: f46f9eddea7bd4d4e813283cdc60cb96, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.59
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4543495872665798, guid: f46f9eddea7bd4d4e813283cdc60cb96, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4543495872665798, guid: f46f9eddea7bd4d4e813283cdc60cb96, type: 2}
       propertyPath: m_LocalPosition.z
